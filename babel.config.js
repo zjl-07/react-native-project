@@ -15,9 +15,6 @@ module.exports = function (api) {
             ".js",
             ".json",
           ],
-          alias: {
-            screens: "./screens",
-          },
         },
       ],
     ],

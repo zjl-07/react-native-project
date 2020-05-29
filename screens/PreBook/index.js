@@ -3,8 +3,9 @@ import { Text, View, TouchableOpacity, Image, ScrollView } from "react-native";
 
 import styles from "./styles";
 
+const INITIAL_CATEGORY = "entertainment";
 export default function PreBook({ route: { params } }) {
-  const [activeCategories, setCategories] = useState("entertainment");
+  const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
   const { data, categories, title } = params;
 
   return (

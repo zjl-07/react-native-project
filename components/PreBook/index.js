@@ -11,8 +11,10 @@ import { FontAwesome } from "@expo/vector-icons";
 
 import styles from "./styles";
 
+const INITIAL_CATEGORY = "entertainment";
+
 export default function PreBook({ data, categories, title, handleNavigation }) {
-  const [activeCategories, setCategories] = useState("entertainment");
+  const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
 
   return (
     <View style={styles.preBookingContainer}>
