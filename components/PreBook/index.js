@@ -8,24 +8,33 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
-const INITIAL_CATEGORY = "entertainment";
-
-export default function PreBook({ data, categories, title, handleNavigation }) {
-  const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
+export default function PreBook({ data }) {
+  const navigation = useNavigation();
+  const [activeCategories, setCategories] = useState("entertainment");
+  const categories = Object.keys(data);
 
   return (
     <View style={styles.preBookingContainer}>
-      <TouchableWithoutFeedback onPress={handleNavigation}>
+      <TouchableWithoutFeedback
+        onPress={() =>
+          navigation.navigate("PreBook", {
+            data,
+            categories,
+            title: "Book Now, Use Later",
+          })
+        }
+      >
         <View style={styles.inline}>
-          <Text style={styles.sectionTitle}>{title}</Text>
+          <Text style={styles.sectionTitle}>Book Now, Use Later</Text>
           <FontAwesome name="chevron-right" size={20} />
         </View>
       </TouchableWithoutFeedback>
       <View style={styles.categoriesContainer}>
-        {data.map((item) => (
+        {categories.map((item) => (
           <TouchableOpacity
             style={styles.categoriesItem}
             key={item}
@@ -36,14 +45,15 @@ export default function PreBook({ data, categories, title, handleNavigation }) {
         ))}
       </View>
       <ScrollView directionalLockEnabled={false} horizontal={true}>
-        {categories[activeCategories].map((item, idx) => (
-          <TouchableOpacity
-            style={idx !== item.length - 1 && styles.marginRight}
-            key={item}
-          >
-            <Image source={item} style={styles.preBookItem} />
-          </TouchableOpacity>
-        ))}
+        {data[activeCategories] &&
+          data[activeCategories].map((item, idx) => (
+            <TouchableOpacity
+              style={idx !== item.length - 1 && styles.marginRight}
+              key={item}
+            >
+              <Image source={{ uri: item }} style={styles.preBookItem} />
+            </TouchableOpacity>
+          ))}
       </ScrollView>
     </View>
   );

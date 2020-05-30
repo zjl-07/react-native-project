@@ -1,0 +1,65 @@
+{
+  "announcemets": [
+    {
+      "id": "1",
+      "image": "https://image.freepik.com/free-vector/promotional-summer-sale-design_23-2148549459.jpg  "
+    },
+    {
+      "id": "2",
+      "image": "https://image.freepik.com/free-vector/stylish-yellow-sale-banner-design_1017-14559.jpg"
+    },
+    {
+      "id": "3",
+      "image": "https://image.freepik.com/free-vector/colorful-summer-sale-concept_52683-38583.jpg"
+    },
+    {
+      "id": "4",
+      "image": "https://image.freepik.com/free-vector/modern-black-friday-brush-stroke-super-sale_1361-1803.jpg"
+    },
+    {
+      "id": "5",
+      "image": "https://image.freepik.com/free-vector/flat-design-banner-cyber-monday-sale_23-2148323027.jpg"
+    }
+  ],
+  "news": [
+    {
+      "title": "May's Promo",
+      "desc": "Check today lates promo for flight",
+      "imagePath": "https://image.freepik.com/free-vector/music-event-poster-template-with-abstract-shapes_1361-1316.jpg"
+    },
+    {
+      "title": "Covid-19 Protection",
+      "desc": "Get free insurance up to 100M",
+      "imagePath": "https://image.freepik.com/free-vector/flat-design-new-year-2020-background-concept_23-2148377677.jpg"
+    },
+    {
+      "title": "Help Fight Covid-19",
+      "desc": "Help each other by donation",
+      "imagePath": "https://image.freepik.com/free-photo/engineer-team-working_101709-121.jpg"
+    },
+    {
+      "title": "Latest new for Covid-19",
+      "desc": "See how you can help them!",
+      "imagePath": "https://image.freepik.com/free-vector/colorful-new-year-party-concept_23-2148373941.jpg"
+    }
+  ],
+  "prebook": {
+    "entertainment": [
+      "https://image.freepik.com/free-vector/characters-people-holding-multimedia-icons-illustration_53876-35228.jpg",
+      "https://image.freepik.com/free-vector/musical-instruments-set_1284-3974.jpg",
+      "https://image.freepik.com/free-vector/characters-people-holding-multimedia-icons-illustration_53876-32615.jpg",
+      "https://image.freepik.com/free-vector/red-cinema-ribbon-with-movie-elements_23-2147544053.jpg"
+    ],
+    "cashback": [
+      "https://image.freepik.com/free-vector/offer-cashback-concept-design_23-2148459392.jpg",
+      "https://image.freepik.com/free-vector/concept-cashback-program_23-2148454024.jpg",
+      "https://image.freepik.com/free-vector/offer-cashback-concept-theme_23-2148459391.jpg",
+      "https://image.freepik.com/free-vector/creative-cashback-concept-illustrated_23-2148466742.jpg"
+    ],
+    "event": [
+      "https://image.freepik.com/free-vector/colorful-new-year-party-concept_23-2148373941.jpg",
+      "https://image.freepik.com/free-photo/engineer-team-working_101709-121.jpg",
+      "https://image.freepik.com/free-vector/music-event-poster-template-with-abstract-shapes_1361-1316.jpg"
+    ]
+  }
+}

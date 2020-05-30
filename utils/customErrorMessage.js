@@ -1,0 +1,16 @@
+export default {
+  400: "The request cannot be fulfilled due to bad syntax, please try again.",
+  401: "Authorization is required for this page.",
+  402: "Payment Required.",
+  403: "You don’t have permission to view this",
+  404: "The requested items could not be found, please make sure to write the correct url.",
+  408: "The server timed out waiting for the rest of the request from the browser, please try again.",
+  409: "The request could not be completed because of a conflict in the request",
+  410: "The requested resource is gone and won’t be coming back.",
+  414: "The server will not accept the request, because the URL is too long.",
+  500: "There was an error on the server and the request could not be completed.",
+  502: "server has received an invalid response from another.",
+  503: "The server is unavailable to handle this request right now.",
+  511: "Tnetwork you’re trying to use requires authentication before sending your request to the server.",
+  521: "Web server is currently down, please try again later.",
+};

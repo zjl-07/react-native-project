@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity, Image, ScrollView } from "react-native";
+import { Text, TouchableOpacity, Image, ScrollView, View } from "react-native";
 
 import styles from "./styles";
 
@@ -12,7 +12,7 @@ export default function News({ route: { params } }) {
       <Text style={styles.subTitle}>{subTitle}</Text>
       {data.map(({ title, desc, imagePath }) => (
         <TouchableOpacity key={title} style={styles.newsContainer}>
-          <Image source={imagePath} style={styles.newsImage} />
+          <Image source={{ uri: imagePath }} style={styles.newsImage} />
           <Text style={styles.newsTitle}>{title}</Text>
           <Text style={styles.subTitle}>{desc}</Text>
         </TouchableOpacity>

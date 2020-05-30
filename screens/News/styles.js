@@ -8,6 +8,7 @@ export default StyleSheet.create({
     margin: 20,
     height: 320,
     flex: 1,
+    justifyContent: "center",
   },
   sectionTitle: {
     fontSize: 25,
@@ -18,7 +19,7 @@ export default StyleSheet.create({
   },
   newsImage: {
     height: 180,
-    width: screenWidth,
+    width: screenWidth - 50,
     borderRadius: 5,
     marginVertical: 10,
   },
@@ -27,5 +28,10 @@ export default StyleSheet.create({
   },
   subTitle: {
     color: color.darkgrey,
+  },
+  centerContent: {
+    display: "flex",
+    // alignContent: "center",
+    justifyContent: "center",
   },
 });

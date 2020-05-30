@@ -4,6 +4,7 @@ import { Text, View, TouchableOpacity, Image, ScrollView } from "react-native";
 import styles from "./styles";
 
 const INITIAL_CATEGORY = "entertainment";
+
 export default function PreBook({ route: { params } }) {
   const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
   const { data, categories, title } = params;
@@ -12,7 +13,7 @@ export default function PreBook({ route: { params } }) {
     <ScrollView style={styles.container}>
       <Text style={styles.sectionTitle}>{title}</Text>
       <View style={styles.categoriesContainer}>
-        {data.map((item) => (
+        {categories.map((item) => (
           <TouchableOpacity
             style={styles.categoriesItem}
             key={item}
@@ -23,11 +24,12 @@ export default function PreBook({ route: { params } }) {
         ))}
       </View>
       <View style={styles.itemContainer}>
-        {categories[activeCategories].map((item) => (
-          <TouchableOpacity key={item} style={styles.itemContainer}>
-            <Image source={item} style={styles.preBookItem} />
-          </TouchableOpacity>
-        ))}
+        {data[activeCategories] &&
+          data[activeCategories].map((item) => (
+            <TouchableOpacity key={item} style={styles.itemContainer}>
+              <Image source={{ uri: item }} style={styles.preBookItem} />
+            </TouchableOpacity>
+          ))}
       </View>
     </ScrollView>
   );
