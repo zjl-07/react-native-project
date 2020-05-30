@@ -16,7 +16,6 @@ import { PRODUCT_LIST, SUB_PRODUCT_LIST } from "datasource/homeScreens";
 import styles from "./styles";
 
 const generateElement = ({ data, loading, errorMessage }) => (Components) => {
-  if (!data) return <ErrorMessage message={errorMessage} />;
   if (loading) return <Spinner />;
   if (errorMessage) return <ErrorMessage message={errorMessage} />;
   return <Components data={data} />;
