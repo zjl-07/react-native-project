@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import {
   Text,
   View,
@@ -12,20 +12,21 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
-export default function LatestNews({ data }) {
+function LatestNews({ data }) {
   const navigation = useNavigation();
+  const handleNavigation = useCallback(
+    () =>
+      navigation.navigate("News", {
+        data,
+        title: "The Latest from Hiyahiya",
+        subTitle: "Stay informed form our latest update",
+      }),
+    []
+  );
 
   return (
     <View style={styles.latestNewsContainer}>
-      <TouchableWithoutFeedback
-        onPress={() =>
-          navigation.navigate("News", {
-            data,
-            title: "The Latest from Hiyahiya",
-            subTitle: "Stay informed form our latest update",
-          })
-        }
-      >
+      <TouchableWithoutFeedback onPress={handleNavigation}>
         <View style={styles.inline}>
           <Text style={styles.sectionTitle}>The Latest from Hiyahiya</Text>
           <FontAwesome name="chevron-right" size={20} />
@@ -47,3 +48,5 @@ export default function LatestNews({ data }) {
     </View>
   );
 }
+
+export default React.memo(LatestNews);

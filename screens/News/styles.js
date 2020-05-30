@@ -8,7 +8,6 @@ export default StyleSheet.create({
     margin: 20,
     height: 320,
     flex: 1,
-    justifyContent: "center",
   },
   sectionTitle: {
     fontSize: 25,

@@ -9,9 +9,9 @@ import PreBook from "components/PreBook";
 import Spinner from "components/Spinner";
 import ErrorMessage from "components/ErrorMessage";
 
-import { fetchAnnouncement, fetchNews, fetchPrebook } from "./action";
-
 import { PRODUCT_LIST, SUB_PRODUCT_LIST } from "datasource/homeScreens";
+
+import { fetchAnnouncement, fetchNews, fetchPrebook } from "./action";
 
 import styles from "./styles";
 
@@ -21,9 +21,8 @@ const generateElement = ({ data, loading, errorMessage }) => (Components) => {
   return <Components data={data} />;
 };
 
-export default function HomePage({ navigation }) {
+export default function HomePage() {
   const dispatch = useDispatch();
-
   const { news, announcement, prebook } = useSelector((state) => state);
 
   useEffect(() => {

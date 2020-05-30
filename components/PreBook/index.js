@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   Text,
   View,
@@ -12,22 +12,26 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
-export default function PreBook({ data }) {
+const INITIAL_CATEGORY = "entertainment";
+
+function PreBook({ data }) {
   const navigation = useNavigation();
-  const [activeCategories, setCategories] = useState("entertainment");
+  const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
   const categories = Object.keys(data);
+
+  const handleNavigation = useCallback(
+    () =>
+      navigation.navigate("PreBook", {
+        data,
+        categories,
+        title: "Book Now, Use Later",
+      }),
+    []
+  );
 
   return (
     <View style={styles.preBookingContainer}>
-      <TouchableWithoutFeedback
-        onPress={() =>
-          navigation.navigate("PreBook", {
-            data,
-            categories,
-            title: "Book Now, Use Later",
-          })
-        }
-      >
+      <TouchableWithoutFeedback onPress={handleNavigation}>
         <View style={styles.inline}>
           <Text style={styles.sectionTitle}>Book Now, Use Later</Text>
           <FontAwesome name="chevron-right" size={20} />
@@ -58,3 +62,5 @@ export default function PreBook({ data }) {
     </View>
   );
 }
+
+export default React.memo(PreBook);

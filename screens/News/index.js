@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, Image, ScrollView, View } from "react-native";
 
 import styles from "./styles";
 
-export default function News({ route: { params } }) {
+function News({ route: { params } }) {
   const { title, data, subTitle } = params;
 
   return (
@@ -20,3 +20,5 @@ export default function News({ route: { params } }) {
     </ScrollView>
   );
 }
+
+export default React.memo(News);

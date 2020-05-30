@@ -5,7 +5,7 @@ import styles from "./styles";
 
 const INITIAL_CATEGORY = "entertainment";
 
-export default function PreBook({ route: { params } }) {
+function PreBook({ route: { params } }) {
   const [activeCategories, setCategories] = useState(INITIAL_CATEGORY);
   const { data, categories, title } = params;
 
@@ -34,3 +34,5 @@ export default function PreBook({ route: { params } }) {
     </ScrollView>
   );
 }
+
+export default React.memo(PreBook);

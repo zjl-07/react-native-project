@@ -30,7 +30,7 @@ const renderSubProductList = (data) =>
     </TouchableOpacity>
   ));
 
-export default function ProductList({ mainProduct, subProduct }) {
+function ProductList({ mainProduct, subProduct }) {
   return (
     <>
       <View style={styles.productContainer}>
@@ -44,3 +44,5 @@ export default function ProductList({ mainProduct, subProduct }) {
     </>
   );
 }
+
+export default React.memo(ProductList);

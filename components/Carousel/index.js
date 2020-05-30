@@ -18,7 +18,7 @@ const renderItem = ({ item, id }) => (
   </View>
 );
 
-export default function CarouselWrapper({ data }) {
+function CarouselWrapper({ data }) {
   const [activeSlide, setActiveSlide] = useState(INITIAL_CAROUSEL_INDEX);
   const handleActivePagination = (index) => setActiveSlide(index);
 
@@ -47,3 +47,5 @@ export default function CarouselWrapper({ data }) {
     </>
   );
 }
+
+export default React.memo(CarouselWrapper);
